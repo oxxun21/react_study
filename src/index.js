@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import Clock from '../src/clock';
 import CommentList from "../src/commentList";
 import NotificationList from '../src/notificationList';
+import Accommodate from '../src/accommodate';
+import ConfirmButton from "../src/confirmButton";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-setInterval(() => {
-  root.render(
+root.render(
     <React.StrictMode>
-      <Clock />
+      <Accommodate />
       <CommentList />
       <NotificationList />
+      <ConfirmButton />
     </React.StrictMode>
-  );
-})
+);
