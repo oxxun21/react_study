@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import CommentList from "../src/commentList";
-import NotificationList from '../src/notificationList';
-import Accommodate from '../src/accommodate';
-import ConfirmButton from "../src/confirmButton";
+import CommentList from "./commentList";
+import NotificationList from './notificationList';
+import Accommodate from './accommodate';
+import ConfirmButton from "./confirmButton";
+import LandingPage from './LandingPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <React.StrictMode>
+      <LandingPage />
       <Accommodate />
       <CommentList />
       <NotificationList />

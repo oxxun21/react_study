@@ -1,5 +1,5 @@
 import React from "react";
-import Comment from "../src/comment";
+import Comment from "./comment";
 
 const comments = [
     {
