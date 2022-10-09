@@ -1,5 +1,5 @@
 import React from "react";
-import Notification from "../src/Notification"
+import Notification from "./Notification"
 
 const reservedNotifications = [
     {

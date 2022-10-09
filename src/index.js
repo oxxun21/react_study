@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import CommentList from "./commentList";
-import NotificationList from './notificationList';
-import Accommodate from './accommodate';
-import ConfirmButton from "./confirmButton";
-import LandingPage from './LandingPage';
+import Clock from './exampleCode/clock';
+import CommentList from "./exampleCode/commentList";
+import NotificationList from './exampleCode/notificationList';
+import Accommodate from './exampleCode/accommodate';
+import ConfirmButton from "./exampleCode/confirmButton";
+import LandingPage from './exampleCode/LandingPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -18,3 +19,19 @@ root.render(
       <ConfirmButton />
     </React.StrictMode>
 );
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+
+// import Clock from './clock';
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// setInterval(() => {
+//   root.render(
+//     <React.StrictMode>
+//       <Clock />
+//     </React.StrictMode>
+//   );
+// })
