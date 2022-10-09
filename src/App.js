@@ -10,6 +10,7 @@ import LandingPage from './exampleCode/LandingPage';
 function App() {
   return (
     <React.StrictMode>
+      <Clock />
       <LandingPage />
       <Accommodate />
       <CommentList />
@@ -18,13 +19,5 @@ function App() {
     </React.StrictMode>
   );
 }
-
-// setInterval(() => {
-//   root.render(
-//     <React.StrictMode>
-//       <Clock />
-//     </React.StrictMode>
-//   );
-// })
 
 export default App;
