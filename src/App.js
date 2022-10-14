@@ -6,6 +6,7 @@ import NotificationList from './exampleCode/notificationList';
 import Accommodate from './exampleCode/accommodate';
 import ConfirmButton from "./exampleCode/confirmButton";
 import LandingPage from './exampleCode/LandingPage';
+import AttendanceBook from "./exampleCode/AttendanceBook";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <CommentList />
       <NotificationList />
       <ConfirmButton />
+      <AttendanceBook />
     </React.StrictMode>
   );
 }
