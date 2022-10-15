@@ -7,17 +7,15 @@ import Accommodate from './exampleCode/accommodate';
 import ConfirmButton from "./exampleCode/confirmButton";
 import LandingPage from './exampleCode/LandingPage';
 import AttendanceBook from "./exampleCode/AttendanceBook";
+import SignUp from "./exampleCode/SignUp";
+import Calculator from "./exampleCode/calculator";
 
 function App() {
   return (
     <React.StrictMode>
-      <Clock />
-      <LandingPage />
-      <Accommodate />
-      <CommentList />
-      <NotificationList />
-      <ConfirmButton />
       <AttendanceBook />
+      <SignUp />
+      <Calculator />
     </React.StrictMode>
   );
 }
