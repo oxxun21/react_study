@@ -9,6 +9,8 @@ import LandingPage from './exampleCode/LandingPage';
 import AttendanceBook from "./exampleCode/AttendanceBook";
 import SignUp from "./exampleCode/SignUp";
 import Calculator from "./exampleCode/calculator";
+import ProfileCard from "./exampleCode/ProfileCard";
+import DarkOrLight from "./exampleCode/DarkOrLight";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <AttendanceBook />
       <SignUp />
       <Calculator />
+      <ProfileCard />
+      <DarkOrLight />
     </React.StrictMode>
   );
 }
