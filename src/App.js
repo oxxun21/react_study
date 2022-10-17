@@ -11,6 +11,7 @@ import SignUp from "./exampleCode/SignUp";
 import Calculator from "./exampleCode/calculator";
 import ProfileCard from "./exampleCode/ProfileCard";
 import DarkOrLight from "./exampleCode/DarkOrLight";
+import Blocks from "./exampleCode/Blocks";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Calculator />
       <ProfileCard />
       <DarkOrLight />
+      <Blocks />
     </React.StrictMode>
   );
 }

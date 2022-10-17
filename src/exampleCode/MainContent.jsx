@@ -7,8 +7,8 @@ function MainContent(props) {
     return (
         <div
             style={{
-                width: "100vw",
-                height: "100vh",
+                width: "700px",
+                height: "300px",
                 padding: "1.5rem",
                 backgroundColor: theme == "light" ? "white" : "black",
                 color: theme == "light" ? "black" : "white",
