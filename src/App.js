@@ -20,8 +20,8 @@ function App() {
       <SignUp />
       <Calculator />
       <ProfileCard />
-      <DarkOrLight />
       <Blocks />
+      <DarkOrLight />
     </React.StrictMode>
   );
 }

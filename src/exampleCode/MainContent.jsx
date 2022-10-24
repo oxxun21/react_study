@@ -7,11 +7,10 @@ function MainContent(props) {
     return (
         <div
             style={{
-                width: "700px",
+                width: "100%",     // 왜 화면에서 넘치지?
                 height: "300px",
-                padding: "1.5rem",
-                backgroundColor: theme == "light" ? "white" : "black",
-                color: theme == "light" ? "black" : "white",
+                backgroundColor: theme === "light" ? "white" : "black",
+                color: theme === "light" ? "black" : "white",
             }}
         >
             <p>하잉 테마 변경 가능</p>

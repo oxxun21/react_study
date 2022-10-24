@@ -18,6 +18,7 @@ const Block = styled.div`
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
+    margin: 10px;
 `;
 
 const blockItems = [
