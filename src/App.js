@@ -1,84 +1,44 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 
-
-import './App.css';
-import AddMovie from './PracticeComponents/ConnectingBackendComponents/AddMovie';
-import MoviesList from './PracticeComponents/ConnectingBackendComponents/MoviesList';
+import Tasks from './PracticeComponents/CustomHooksComponents/Tasks/Tasks';
+import NewTask from './PracticeComponents/CustomHooksComponents/NewTask/NewTask';
+import useHttp from './PracticeComponents/CustomHooksComponents/hooks/use-http';
 
 function App() {
-  const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [tasks, setTasks] = useState([]);
 
-  const fetchMoviesHandler = useCallback(async () => {
-    setIsLoading(true);
-    setError(null);
-    try {
-      const response = await fetch('https://react-http-e955a-default-rtdb.firebaseio.com/movies.json');
-      if (!response.ok) {
-        throw new Error('Something went wrong!');
-      }
-
-      const data = await response.json();
-
-      const loadeMovies = [];
-
-      for (const key in data) {
-        loadeMovies.push({
-          id: key,
-          title: data[key].title,
-          openingText: data[key].openingText,
-          releaseDate: data[key].releaseDate,
-        });
-      }
-
-      setMovies(loadeMovies);
-    } catch (error) {
-      setError(error.message);
-    }
-    setIsLoading(false);
-  }, []);
+  const { isLoading, error, sendRequest: fetchTasks } = useHttp();
 
   useEffect(() => {
-    fetchMoviesHandler();
-  }, [fetchMoviesHandler]);
+    const transformTasks = (tasksObj) => {
+      const loadedTasks = [];
 
-  async function addMovieHandler(movie) {
-    const response = await fetch('https://react-http-e955a-default-rtdb.firebaseio.com/movies.json', {
-      method: 'POST',
-      body: JSON.stringify(movie),
-      headers: {
-        'Content-Type': 'application/json'
+      for (const taskKey in tasksObj) {
+        loadedTasks.push({ id: taskKey, text: tasksObj[taskKey].text });
       }
-    });
-    const data = await response.json();
-    console.log(data);
-  }
 
-  let content = <p>Found no movies.</p>;
+      setTasks(loadedTasks);
+    };
 
-  if (movies.length > 0) {
-    content = <MoviesList movies={movies} />;
-  }
+    fetchTasks(
+      { url: 'https://react-http-e955a-default-rtdb.firebaseio.com/tasks.json' },
+      transformTasks
+    );
+  }, [fetchTasks]);
 
-  if (error) {
-    content = <p>{error}</p>;
-  }
-
-  if (isLoading) {
-    content = <p>Loading...</p>;
-  }
-
+  const taskAddHandler = (task) => {
+    setTasks((prevTasks) => prevTasks.concat(task));
+  };
 
   return (
     <React.Fragment>
-      <section>
-        <AddMovie onAddMovie={addMovieHandler} />
-      </section>
-      <section>
-        <button onClick={fetchMoviesHandler}>Fetch Movies</button>
-      </section>
-      <section>{content}</section>
+      <NewTask onAddTask={taskAddHandler} />
+      <Tasks
+        items={tasks}
+        loading={isLoading}
+        error={error}
+        onFetch={fetchTasks}
+      />
     </React.Fragment>
   );
 }
