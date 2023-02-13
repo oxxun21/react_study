@@ -1,45 +1,10 @@
-import React, { useEffect, useState } from 'react';
-
-import Tasks from './PracticeComponents/CustomHooksComponents/Tasks/Tasks';
-import NewTask from './PracticeComponents/CustomHooksComponents/NewTask/NewTask';
-import useHttp from './PracticeComponents/CustomHooksComponents/hooks/use-http';
+import SimpleInput from './PracticeComponents/HandingForm&UserInputComponents/SimpleInput';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-
-  const { isLoading, error, sendRequest: fetchTasks } = useHttp();
-
-  useEffect(() => {
-    const transformTasks = (tasksObj) => {
-      const loadedTasks = [];
-
-      for (const taskKey in tasksObj) {
-        loadedTasks.push({ id: taskKey, text: tasksObj[taskKey].text });
-      }
-
-      setTasks(loadedTasks);
-    };
-
-    fetchTasks(
-      { url: 'https://react-http-e955a-default-rtdb.firebaseio.com/tasks.json' },
-      transformTasks
-    );
-  }, [fetchTasks]);
-
-  const taskAddHandler = (task) => {
-    setTasks((prevTasks) => prevTasks.concat(task));
-  };
-
   return (
-    <React.Fragment>
-      <NewTask onAddTask={taskAddHandler} />
-      <Tasks
-        items={tasks}
-        loading={isLoading}
-        error={error}
-        onFetch={fetchTasks}
-      />
-    </React.Fragment>
+    <div className="app">
+      <SimpleInput />
+    </div>
   );
 }
 
