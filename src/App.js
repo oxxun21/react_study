@@ -1,28 +1,9 @@
-import { useState } from "react";
-import Cart from "./FoodOrderAppComponents/Cart/Cart";
-import Header from "./FoodOrderAppComponents/Layout/Header";
-import Meals from "./FoodOrderAppComponents/Meals/Meals";
-import CartProvider from "./store/CartProvider";
+import Counter from './LearningRedux/PracticeReduxComponents/Counter';
+
 
 function App() {
-  const [cartIsShown, setCartIsShown] = useState(false);
-
-  const showCartHandler = () => {
-    setCartIsShown(true);
-  };
-
-  const hideCartHandler = () => {
-    setCartIsShown(false);
-  };
-
   return (
-    <CartProvider>
-      {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
-      <main>
-        <Meals />
-      </main>
-    </CartProvider>
+    <Counter />
   );
 }
 
