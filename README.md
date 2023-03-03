@@ -4,14 +4,6 @@
 
  - [React 완벽 가이드 with Redux, Next.js, Typescript](https://www.udemy.com/course/best-react/) with 유데미
 
-
-<span align="right"><img src="https://user-images.githubusercontent.com/98699927/215683719-a3e92bc7-75db-4311-b3c7-56f06e5c5fcf.jpg" width=410 height=200></span>
-<span align="left"><img src="https://user-images.githubusercontent.com/98699927/215683746-b90ddad0-423a-49d2-846e-3a1f9eaf81df.jpg" width=410 height=200></span>
-<span align="right"><img src="https://user-images.githubusercontent.com/98699927/215683761-267412c4-626c-4e4a-9cee-55ad5a14fdc1.jpg" width=410 height=200></span>
-<br />
-<span align="left"><img src="https://user-images.githubusercontent.com/98699927/215683787-c889f2f2-0427-4fbc-847e-c6ccf4b7b31a.jpg" width=410 height=200></span>
-<span align="right"><img src="https://user-images.githubusercontent.com/98699927/215683806-f68683ff-4b12-4938-b183-2231b92919ac.jpg" width=410 height=200></span>
-
 <ul>
  <li>리액트 핵심구문, JSX</li>
  <li>컴포넌트 구축과 props로 데이터 공유</li>
